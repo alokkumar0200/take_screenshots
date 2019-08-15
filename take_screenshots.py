@@ -65,7 +65,7 @@ def main():
 			browser = webdriver.Firefox(executable_path=selenium_driver)			#Comment this line if using chrome instead of firefox
 			# browser = webdriver.Chrome(executable_path=selenium_driver)			#And uncomment this line for Chrome
 			for x in dirs:
-				image = x.split(' ')[0].strip('/')+'.png'
+				image = x.split(' ')[0].strip('/')[:-1]+'.png'
 				addr = domain+'/'+x.split(' ')[0].strip('/')
 				browser.get(addr)
 				browser.save_screenshot(folder_for_results + '/'+image)
